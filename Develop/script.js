@@ -16,12 +16,11 @@ generateBtn.addEventListener("click", writePassword); //Don't touch this event l
 var input = prompt("Enter \'all\' to select all characters(recommended). Or enter \'upper\', \'lower\', \'numerical\', or \'special\' to pick one option", "(do not enter quotes)");
 
 var criteria = {
-  all: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  lower: "abcdefghijklmnopqrstuvwxyz",
-  numerical: "0123456789",
-  special: "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  
+  "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  "upper": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "lower": "abcdefghijklmnopqrstuvwxyz",
+  "numerical": "0123456789",
+  "special": "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
 };
 
 
@@ -31,8 +30,8 @@ if (input === "all") {
   var passwordOutput = "";
   var allCharactersLength = criteria.all.length;
   for (var i = 0; i < allCharactersLength; i++) {
-    passwordOutput += criteria.all.charAt(Math.floor(Math.random() * 
-    allCharactersLength));
+    passwordOutput += criteria.all.charAt(Math.random() * 
+    allCharactersLength);
   }
   return passwordOutput
   }
@@ -41,8 +40,8 @@ if (input === "all") {
     var passwordOutput = "";
     var uppercaseLength = criteria.upper.length;
     for (var i = 0; i < uppercaseLength; i++) {
-      passwordOutput += criteria.upper.charAt(Math.floor(Math.random() * 
-      uppercaseLength));
+      passwordOutput += criteria.upper.charAt(Math.random() * 
+      uppercaseLength);
     }
     return passwordOutput
     }
@@ -51,8 +50,8 @@ if (input === "all") {
     var passwordOutput = "";
     var lowercaseLength = criteria.lower.length;
     for (var i = 0; i < lowercaseLength; i++) {
-      passwordOutput += criteria.lower.charAt(Math.floor(Math.random() * 
-      lowercaseLength));
+      passwordOutput += criteria.lower.charAt(Math.random() * 
+      lowercaseLength);
     }
     return passwordOutput
     }
@@ -61,8 +60,8 @@ if (input === "all") {
     var passwordOutput = "";
     var numericalLength = criteria.numerical.length;
     for (var i = 0; i < numericalLength; i++) {
-      passwordOutput += criteria.numerical.charAt(Math.floor(Math.random() * 
-      numericalLength));
+      passwordOutput += criteria.numerical.charAt(Math.random() * 
+      numericalLength);
     }
     return passwordOutput
     }
@@ -71,8 +70,8 @@ if (input === "all") {
     var passwordOutput = "";
     var specialCharactersLength = criteria.special.length;
     for (var i = 0; i < specialCharactersLength; i++) {
-      passwordOutput += criteria.special.charAt(Math.floor(Math.random() * 
-      specialCharactersLength));
+      passwordOutput += criteria.special.charAt(Math.random() * 
+      specialCharactersLength);
     }
     return passwordOutput
   }
