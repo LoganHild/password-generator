@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// Don't touch this variable
 // Write password to the #password input
-function writePassword() {
+function writePassword() { // Don't touch this function
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -11,17 +11,27 @@ function writePassword() {
 }
 //make characters into variable "store"
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); //Don't touch this event listener!
 //!!!!!!!!!!!!!maybe change to if click on cancel will select all options, OR enter in to select one criteria then change conditional order
 var input = prompt("Enter \'all\' to select all characters(recommended). Or enter \'upper\', \'lower\', \'numerical\', or \'special\' to pick one option", "(do not enter quotes)");
+
+var criteria = {
+  all: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  lower: "abcdefghijklmnopqrstuvwxyz",
+  numerical: "0123456789",
+  special: "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  
+};
+
+
 
 if (input === "all") {
   function generatePassword(length) {
   var passwordOutput = "";
-  var allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?";
-  var allCharactersLength = allCharacters.length;
+  var allCharactersLength = criteria.all.length;
   for (var i = 0; i < allCharactersLength; i++) {
-    passwordOutput += allCharacters.charAt(Math.floor(Math.random() * 
+    passwordOutput += criteria.all.charAt(Math.floor(Math.random() * 
     allCharactersLength));
   }
   return passwordOutput
@@ -29,44 +39,40 @@ if (input === "all") {
 } else if (input === "upper") {
   function generatePassword(length) {
     var passwordOutput = "";
-    var allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var allCharactersLength = allCharacters.length;
-    for (var i = 0; i < allCharactersLength; i++) {
-      passwordOutput += allCharacters.charAt(Math.floor(Math.random() * 
-      allCharactersLength));
+    var uppercaseLength = criteria.upper.length;
+    for (var i = 0; i < uppercaseLength; i++) {
+      passwordOutput += criteria.upper.charAt(Math.floor(Math.random() * 
+      uppercaseLength));
     }
     return passwordOutput
     }
 } else if (input === "lower") {
   function generatePassword(length) {
     var passwordOutput = "";
-    var allCharacters = "abcdefghijklmnopqrstuvwxyz";
-    var allCharactersLength = allCharacters.length;
-    for (var i = 0; i < allCharactersLength; i++) {
-      passwordOutput += allCharacters.charAt(Math.floor(Math.random() * 
-      allCharactersLength));
+    var lowercaseLength = criteria.lower.length;
+    for (var i = 0; i < lowercaseLength; i++) {
+      passwordOutput += criteria.lower.charAt(Math.floor(Math.random() * 
+      lowercaseLength));
     }
     return passwordOutput
     }
 } else if (input === "numerical") {
   function generatePassword(length) {
     var passwordOutput = "";
-    var allCharacters = "0123456789";
-    var allCharactersLength = allCharacters.length;
-    for (var i = 0; i < allCharactersLength; i++) {
-      passwordOutput += allCharacters.charAt(Math.floor(Math.random() * 
-      allCharactersLength));
+    var numericalLength = criteria.numerical.length;
+    for (var i = 0; i < numericalLength; i++) {
+      passwordOutput += criteria.numerical.charAt(Math.floor(Math.random() * 
+      numericalLength));
     }
     return passwordOutput
     }
 } else (input === "special") 
   function generatePassword(length) {
     var passwordOutput = "";
-    var allCharacters = "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?";
-    var allCharactersLength = allCharacters.length;
-    for (var i = 0; i < allCharactersLength; i++) {
-      passwordOutput += allCharacters.charAt(Math.floor(Math.random() * 
-      allCharactersLength));
+    var specialCharactersLength = criteria.special.length;
+    for (var i = 0; i < specialCharactersLength; i++) {
+      passwordOutput += criteria.special.charAt(Math.floor(Math.random() * 
+      specialCharactersLength));
     }
     return passwordOutput
   }
