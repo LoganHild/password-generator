@@ -23,20 +23,20 @@ var all = confirm("Would you like to use all characters? (uppercase, lowercase, 
 
 // var characters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?"]
 var characters = {
-  "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "upper": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
+  "upper": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",//Done
   "lower": "abcdefghijklmnopqrstuvwxyz",
   "numerical": "0123456789",
   "special": "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "upperLower": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
-  "upperNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-  "upperSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "upperLowerNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-  "upperLowerSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "upperNS": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  "upperLower": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",//Done
+  "upperNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", //Done
+  "upperSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
+  "upperLowerNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",//Done
+  "upperLowerSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
+  "upperNumberSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
   "lowerNumber": "abcdefghijklmnopqrstuvwxyz0123456789",
   "lowerSpecial": "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "lowerNS": "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  "lowerNumberSpecial": "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
   "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
 };
 
@@ -52,14 +52,14 @@ if (all === true) {
   }
 } else {
   var upper = confirm("Would you like uppercase characters included?");
-  if (upper === true) {
+  if (upper === true) {//upper true
     var lower = confirm("Would you like lowercase characters included?");
-    if (lower === true){
+    if (lower === true){//lower true
       var number = confirm("Would you like numerical characters included?");
-      if (number === true) {
+      if (number === true) {//number true
         var special = confirm("Would you like special characters included?");
-        if (special === true) {
-          function generatePassword() {
+        if (special === true) {//special true
+          function generatePassword() { //All TTTT
             var passwordOutput = "";
                 var charactersLength = characters.all.length;
                 for (var i = 0; i < charactersLength; i++) {
@@ -68,8 +68,8 @@ if (all === true) {
                 }
                 return passwordOutput;
               }
-        } else {
-          function generatePassword() {
+        } else {//special false
+          function generatePassword() { //upperLowerNumber TTTF
             var passwordOutput = "";
             var charactersLength = characters.upperLowerNumber.length;
             for (var i = 0; i < charactersLength; i++) {
@@ -79,10 +79,10 @@ if (all === true) {
             return passwordOutput;
           }
         }
-      } else {
+      } else {//number false
         var special = confirm("Would you like special characters included?");
         if (special === true) {
-          function generatePassword() {
+          function generatePassword() { //upperLowerSpecial TTFT
             var passwordOutput = "";
             var charactersLength = characters.upperLowerSpecial.length;
             for (var i = 0; i < charactersLength; i++) {
@@ -92,11 +92,79 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
-          function generatePassword() {
+          function generatePassword() { //upperLower TTFF
             var passwordOutput = "";
             var charactersLength = characters.upperLower.length;
             for (var i = 0; i < charactersLength; i++) {
               passwordOutput += characters.upperLower.charAt(Math.random() *
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      }
+    } else {//lower false
+      var number = confirm("Would you like numerical characters included?");
+      if (number === true) {
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //upperNumberSpecial TFTT
+            var passwordOutput = "";
+            var charactersLength = characters.upperNumberSpecial.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.upperNumberSpecial.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        } else {
+          function generatePassword() { //upperNumber TFTF
+            var passwordOutput = "";
+            var charactersLength = characters.upperNumber.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.upperNumber.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      } else {
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //upperSpecial TFFT
+            var passwordOutput = "";
+            var charactersLength = characters.upperSpecial.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.upperSpecial.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        } else {
+          function generatePassword() { //upper TFFF
+            var passwordOutput = "";
+            var charactersLength = characters.upper.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.upper.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      }
+    }
+  } else { //upper false
+    var lower = confirm("Would you like lowercase characters included?");
+    if (lower === true) {//lower true
+      var number = confirm("Would you like numerical characters included?");
+      if (number === true){//number true
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //lowerNumberSpecial FTTT
+            var passwordOutput = "";
+            var charactersLength = characters.lowerNumberSpecial.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.lowerNumberSpecial.charAt(Math.random() * 
               charactersLength);
             }
             return passwordOutput;
@@ -117,139 +185,6 @@ if (all === true) {
 
 
 
-
-
-
-
-
-// function generatePassword() {
-//   if (all === true) {    //all, TTTT
-//     var passwordOutput = "";
-//     var charactersLength = characters.all.length;
-//     for (var i = 0; i < charactersLength; i++) {
-//       passwordOutput += characters.all.charAt(Math.random() * 
-//       charactersLength);
-//     }
-//     return passwordOutput
-//   } else if (all !== true) { //for false input
-//     if (upper === true && lower === false && numerical === false && special === false) {
-//       var passwordOutput = "";   //upper, TFFF
-//       var charactersLength = characters.upper.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upper.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === false && lower === true && numerical === false && special === false) {
-//       var passwordOutput = "";   //lower, FTFF
-//       var charactersLength = characters.lower.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.lower.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower !== true && numerical === true && special !== true) {
-//       var passwordOutput = "";   //numerical, FFTF
-//       var charactersLength = characters.numerical.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.numerical.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower !== true && numerical !== true && special === true) {
-//       var passwordOutput = "";   //special, FFFT
-//       var charactersLength = characters.special.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.special.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === true && lower === true && numerical !== true && special !== true) {
-//       var passwordOutput = "";  //upperLower, TTFF
-//       var charactersLength = characters.upperLower.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upperLower.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === true && lower !== true && numerical === true && special !== true) {
-//       var passwordOutput = "";  //upperNumber, TFTF
-//       var charactersLength = characters.upperNumber.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upperNumber.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === true && lower !== true && numerical !== true && special === true) {
-//       var passwordOutput = ""; //upperSpecial, TFFT
-//       var charactersLength = characters.upperSpecial.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upperSpecial.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === true && lower === true && numerical === true && special !== true) {
-      // var passwordOutput = ""; //upperLN, TTTF
-      // var charactersLength = characters.upperLN.length;
-      // for (var i = 0; i < charactersLength; i++) {
-      //   passwordOutput += criteria.upperLN.charAt(Math.random() * 
-      //   charactersLength);
-      // }
-      // return passwordOutput
-//     } else if (upper === true && lower === true && numerical !== true && special === true) {
-//       var passwordOutput = ""; //upperLS, TTFT
-//       var charactersLength = characters.upperLS.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upperLS.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper === true && lower !== true && numerical === true && special === true) {
-//       var passwordOutput = ""; //upperNS, TFTT
-//       var charactersLength = characters.upperNS.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.upperNS.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower === true && numerical === true && special !== true) {
-//       var passwordOutput = ""; //lowerNumber, FTTF
-//       var charactersLength = characters.lowerNumber.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.lowerNumber.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower === true && numerical !== true && special === true) {
-//       var passwordOutput = ""; //lowerSpecial, FTFT
-//       var charactersLength = characters.lowerSpecial.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.lowerSpecial.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower === true && numerical === true && special === true) {
-//       var passwordOutput = ""; //lowerNS, FTTT
-//       var charactersLength = characters.lowerSpecial.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.lowerSpecial.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else if (upper !== true && lower !== true && numerical === true && special === true) {
-//       var passwordOutput = ""; //numberSpecial, FFTT
-//       var charactersLength = characters.numberSpecial.length;
-//       for (var i = 0; i < charactersLength; i++) {
-//         passwordOutput += criteria.numberSpecial.charAt(Math.random() * 
-//         charactersLength);
-//       }
-//       return passwordOutput
-//     } else {
-//       alert("You must select criteria!");
-//       location.reload();
-//     }
-//   }
-// }
 
 
 
