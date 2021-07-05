@@ -12,32 +12,26 @@ function writePassword() { // Don't touch this function
 //make characters into variable "store"
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //Don't touch this event listener!
-//!!!!!!!!!!!!!maybe change to if click on cancel will select all options, OR enter in to select one criteria then change conditional order
-// var input = prompt("Enter Criteria- \"u\"=upper, \"l\"=lower, \"n\"=number, \"s\"=special, \"ul\"=upper & lower, \"un\"=upper & number, \"us\"=upper & special, \"ln\"=lower & number, \"ls\"=lower & special, \"ns\"=number & special, \"a\" = all","(do not enter quotes)");
 
 var all = confirm("Would you like to use all characters? (uppercase, lowercase, numbers, symbols")
-// var upper = confirm("Would you like uppercase characters included?");
-// var lower = confirm("Would you like lowercase characters included?");
-// var number = confirm("Would you like number characters included?");
-// var special = confirm("Would you like special characters included?");
 
 // var characters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?"]
 var characters = {
   "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
   "upper": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",//Done
-  "lower": "abcdefghijklmnopqrstuvwxyz",
-  "numerical": "0123456789",
-  "special": "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  "lower": "abcdefghijklmnopqrstuvwxyz",//Done
+  "number": "0123456789",//Done
+  "special": "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
   "upperLower": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",//Done
   "upperNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", //Done
   "upperSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
   "upperLowerNumber": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",//Done
   "upperLowerSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
   "upperNumberSpecial": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
-  "lowerNumber": "abcdefghijklmnopqrstuvwxyz0123456789",
-  "lowerSpecial": "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "lowerNumberSpecial": "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
-  "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",
+  "lowerNumber": "abcdefghijklmnopqrstuvwxyz0123456789", //Done
+  "lowerSpecial": "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
+  "lowerNumberSpecial": "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?", //Done
+  "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
 };
 
 if (all === true) {
@@ -169,6 +163,81 @@ if (all === true) {
             }
             return passwordOutput;
           }
+        } else {
+          function generatePassword() { //lowerNumber FTTF
+            var passwordOutput = "";
+            var charactersLength = characters.lowerNumber.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.lowerNumber.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      } else {//number false
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //lowerSpecial FTFT
+            var passwordOutput = "";
+            var charactersLength = characters.lowerSpecial.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.lowerSpecial.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        } else {
+          function generatePassword() { //lower FTFF
+            var passwordOutput = "";
+            var charactersLength = characters.lower.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.lower.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      }
+    } else { //lower false
+      var number = confirm("Would you like numerical characters included?");
+      if (number === true) {//number true
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //numberSpecial FFTT
+            var passwordOutput = "";
+            var charactersLength = characters.numberSpecial.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.numberSpecial.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        } else {
+          function generatePassword() { //number FFTF
+            var passwordOutput = "";
+            var charactersLength = characters.number.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.number.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        }
+      } else {//number false
+        var special = confirm("Would you like special characters included?");
+        if (special === true) {
+          function generatePassword() { //special FFFT
+            var passwordOutput = "";
+            var charactersLength = characters.special.length;
+            for (var i = 0; i < charactersLength; i++) {
+              passwordOutput += characters.special.charAt(Math.random() * 
+              charactersLength);
+            }
+            return passwordOutput;
+          }
+        } else {
+          alert("You must select criteria!");
+          location.reload();
         }
       }
     }
