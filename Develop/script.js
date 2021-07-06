@@ -12,8 +12,7 @@ function writePassword() { // Don't touch this function
 //make characters into variable "store"
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //Don't touch this event listener!
-
-var all = confirm("Would you like to use all characters? (uppercase, lowercase, numbers, symbols")
+var input = prompt("Please enter random number characters to select length of password between 8 and 128 characters. (abcdefgh= 8, 1234567890= 10, etc" , "(Do Not include spaces!)");
 
 // var characters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?"]
 var characters = {
@@ -33,20 +32,21 @@ var characters = {
   "lowerNumberSpecial": "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?", //Done
   "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
 };
-
-
-if (all === true) {
+var inputLength = input.length;
+if (input.length >= 8 && input.length <= 128) {
+  var all = confirm("Would you like to use all characters? (uppercase, lowercase, numbers, symbols");
+  if (all === true) {
   alert("You selected all criteria! (uppercase, lowercase, numerical, and special)");
   function generatePassword() {
     var passwordOutput = "";
         var charactersLength = characters.all.length;
-        for (var i = 0; i < charactersLength; i++) {
+        for (var i = 0; i < inputLength; i++) {
           passwordOutput += characters.all.charAt(Math.random() * 
           charactersLength);
         }
         return passwordOutput
   }
-} else {
+  } else {
   var upper = confirm("Would you like uppercase characters included?");
   if (upper === true) {//upper true
     alert("You selected to include uppercase characters.");
@@ -63,7 +63,7 @@ if (all === true) {
           function generatePassword() { //All TTTT
             var passwordOutput = "";
                 var charactersLength = characters.all.length;
-                for (var i = 0; i < charactersLength; i++) {
+                for (var i = 0; i < inputLength; i++) {
                   passwordOutput += characters.all.charAt(Math.random() * 
                   charactersLength);
                 }
@@ -75,7 +75,7 @@ if (all === true) {
           function generatePassword() { //upperLowerNumber TTTF
             var passwordOutput = "";
             var charactersLength = characters.upperLowerNumber.length;
-            for (var i = 0; i < charactersLength; i++) {
+            for (var i = 0; i < inputLength; i++) {
               passwordOutput += characters.upperLowerNumber.charAt(Math.random() *
               charactersLength);
             }
@@ -91,7 +91,7 @@ if (all === true) {
           function generatePassword() { //upperLowerSpecial TTFT
             var passwordOutput = "";
             var charactersLength = characters.upperLowerSpecial.length;
-            for (var i = 0; i < charactersLength; i++) {
+            for (var i = 0; i < inputLength; i++) {
               passwordOutput += characters.upperLowerSpecial.charAt(Math.random() *
               charactersLength);
             }
@@ -103,7 +103,7 @@ if (all === true) {
           function generatePassword() { //upperLower TTFF
             var passwordOutput = "";
             var charactersLength = characters.upperLower.length;
-            for (var i = 0; i < charactersLength; i++) {
+            for (var i = 0; i < inputLength; i++) {
               passwordOutput += characters.upperLower.charAt(Math.random() *
               charactersLength);
             }
@@ -287,9 +287,11 @@ if (all === true) {
       }
     }
   }
+  }
+} else {
+  alert("Must be between 8 and 128 characters!")
+  location.reload();
 }
-
-
 
 
 
