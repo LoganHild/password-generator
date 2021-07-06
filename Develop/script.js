@@ -13,7 +13,7 @@ function writePassword() { // Don't touch this function
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //Don't touch this event listener!
 
-var input = prompt("Please enter random number characters to select length of password between 8 and 128 characters. (abcdefgh= 8, 1234567890= 10, etc" , "(Do Not include spaces!)");
+var input = prompt("Please enter random number characters to select length of password between 8 and 128 characters. Do Not include spaces! (abcdefgh= 8, 1234567890= 10, etc)" );
 var inputLength = input.length;
 var characters = {
   "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
