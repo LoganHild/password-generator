@@ -34,7 +34,9 @@ var characters = {
   "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
 };
 
+
 if (all === true) {
+  alert("You selected all criteria! (uppercase, lowercase, numerical, and special)");
   function generatePassword() {
     var passwordOutput = "";
         var charactersLength = characters.all.length;
@@ -47,12 +49,17 @@ if (all === true) {
 } else {
   var upper = confirm("Would you like uppercase characters included?");
   if (upper === true) {//upper true
+    alert("You selected to include uppercase characters.");
     var lower = confirm("Would you like lowercase characters included?");
     if (lower === true){//lower true
+      alert("You selected to include lowercase characters.");
       var number = confirm("Would you like numerical characters included?");
       if (number === true) {//number true
+        alert("You selected to include numerical characters.");
         var special = confirm("Would you like special characters included?");
         if (special === true) {//special true
+          alert("You selected to include special characters.");
+          alert("You selected all characters.");
           function generatePassword() { //All TTTT
             var passwordOutput = "";
                 var charactersLength = characters.all.length;
@@ -63,6 +70,8 @@ if (all === true) {
                 return passwordOutput;
               }
         } else {//special false
+          alert("You chose to not include special characters.");
+          alert("You selected uppercase, lowercase, and numerical characters!");
           function generatePassword() { //upperLowerNumber TTTF
             var passwordOutput = "";
             var charactersLength = characters.upperLowerNumber.length;
@@ -74,8 +83,11 @@ if (all === true) {
           }
         }
       } else {//number false
+        alert("You chose to not select numerical characters.");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters.");
+          alert("You selected uppercase, lowercase, and special characters!");
           function generatePassword() { //upperLowerSpecial TTFT
             var passwordOutput = "";
             var charactersLength = characters.upperLowerSpecial.length;
@@ -86,6 +98,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters");
+          alert("You selected uppercase and lowercase characters!");
           function generatePassword() { //upperLower TTFF
             var passwordOutput = "";
             var charactersLength = characters.upperLower.length;
@@ -98,10 +112,14 @@ if (all === true) {
         }
       }
     } else {//lower false
+      alert("You chose to not select lowercase characters.");
       var number = confirm("Would you like numerical characters included?");
       if (number === true) {
+        alert("You selected to include numerical characters!");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected uppercase, numerical, and special characters!");
           function generatePassword() { //upperNumberSpecial TFTT
             var passwordOutput = "";
             var charactersLength = characters.upperNumberSpecial.length;
@@ -112,6 +130,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters.");
+          alert("You selected uppercase and numerical characters!");
           function generatePassword() { //upperNumber TFTF
             var passwordOutput = "";
             var charactersLength = characters.upperNumber.length;
@@ -122,9 +142,12 @@ if (all === true) {
             return passwordOutput;
           }
         }
-      } else {
+      } else {//number false
+        alert("You chose to not include numerical characters.");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected uppercase and special characters!");
           function generatePassword() { //upperSpecial TFFT
             var passwordOutput = "";
             var charactersLength = characters.upperSpecial.length;
@@ -135,6 +158,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters.");
+          alert("You selected uppercase characters!");
           function generatePassword() { //upper TFFF
             var passwordOutput = "";
             var charactersLength = characters.upper.length;
@@ -148,12 +173,17 @@ if (all === true) {
       }
     }
   } else { //upper false
+    alert("You chose to not include uppercase characters");
     var lower = confirm("Would you like lowercase characters included?");
     if (lower === true) {//lower true
+      alert("You selected to include lowercase characters!");
       var number = confirm("Would you like numerical characters included?");
       if (number === true){//number true
+        alert("You selected to include numerical characters!");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected lowercase, numerical, and special characters!");
           function generatePassword() { //lowerNumberSpecial FTTT
             var passwordOutput = "";
             var charactersLength = characters.lowerNumberSpecial.length;
@@ -164,6 +194,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters.");
+          alert("You selected lowercase and numerical characters!");
           function generatePassword() { //lowerNumber FTTF
             var passwordOutput = "";
             var charactersLength = characters.lowerNumber.length;
@@ -175,8 +207,11 @@ if (all === true) {
           }
         }
       } else {//number false
+        alert("You chose to not include numerical characters.");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected lowercase and special characters!");
           function generatePassword() { //lowerSpecial FTFT
             var passwordOutput = "";
             var charactersLength = characters.lowerSpecial.length;
@@ -187,6 +222,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters.");
+          alert("You selected lowercase characters!")
           function generatePassword() { //lower FTFF
             var passwordOutput = "";
             var charactersLength = characters.lower.length;
@@ -199,10 +236,13 @@ if (all === true) {
         }
       }
     } else { //lower false
+      alert("You chose to not include lowercase characters.");
       var number = confirm("Would you like numerical characters included?");
       if (number === true) {//number true
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected numerical and special characters!")
           function generatePassword() { //numberSpecial FFTT
             var passwordOutput = "";
             var charactersLength = characters.numberSpecial.length;
@@ -213,6 +253,8 @@ if (all === true) {
             return passwordOutput;
           }
         } else {
+          alert("You chose to not include special characters.");
+          alert("You selected numerical characters!");
           function generatePassword() { //number FFTF
             var passwordOutput = "";
             var charactersLength = characters.number.length;
@@ -224,8 +266,11 @@ if (all === true) {
           }
         }
       } else {//number false
+        alert("You chose to not include numerical characters.");
         var special = confirm("Would you like special characters included?");
         if (special === true) {
+          alert("You selected to include special characters!");
+          alert("You selected special characters!");
           function generatePassword() { //special FFFT
             var passwordOutput = "";
             var charactersLength = characters.special.length;
@@ -249,8 +294,9 @@ if (all === true) {
 
 
 
-
-
+//How am I going to make a prompt for adding the amount of characters needed?
+//need to make prompts for selecting length(at least 8, no more than 128)
+//when prompts are answered it should be validated with at least one character type selected
 
 
 
@@ -340,14 +386,3 @@ if (all === true) {
   
 
 // }
-//need to use conditional for what they select, how will I tie them together?
-//How am I going to make a prompt for adding the amount of characters needed?
-
-
-
-/*need to make prompts for selecting length(at least 8, no more than 128)
-as well as asked for character types- lowercase, uppercase, numeric, and/or special characters*/
-//series of prompts? Would be easier to have it selected on HTML need to research this!
-//when prompts are answered it should be validated with at least one character type selected
-//Once prompts are answered, password should be generated to match criteria
-// password displayed as alert or written
