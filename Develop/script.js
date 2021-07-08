@@ -267,4 +267,4 @@ if (inputLength >= 8 && inputLength <= 128 ) {
 };
 
 
-//when prompts are answered it should be validated with at least one character type selected
+
