@@ -261,12 +261,9 @@ if (input >= 8 && input <= 128 ) {
     }
   }
 }
-} else if (input < 8 || input > 128) {
+} else {
   alert("Must be between 8 and 128 characters!");
   location.reload();
-} else if (input === null) {
-  alert("You must select criteria!");
-          location.reload();
 }
 
 
