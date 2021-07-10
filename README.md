@@ -8,6 +8,6 @@
 
 ## Deployed Application Link
 https://loganhild.github.io/password-generator/
-![image](https://user-images.githubusercontent.com/82903685/124862495-19b20280-df7b-11eb-90dd-b9054da62f0a.png)
+
 ![Screenshot (26)](https://user-images.githubusercontent.com/82903685/124862474-0f900400-df7b-11eb-95af-530800769a4f.png)
 ![Screenshot (27)](https://user-images.githubusercontent.com/82903685/124862523-25052e00-df7b-11eb-8208-26eca7116d5a.png)
