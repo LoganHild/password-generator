@@ -13,7 +13,7 @@ function writePassword() { // Don't touch this function
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //Don't touch this event listener!
 
-var input = prompt("Please enter a number between 8 and 128 to determine the amount of characters in the password!");
+
 
 var characters = {
   "all": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
@@ -33,12 +33,13 @@ var characters = {
   "numberSpecial": "0123456789!@#$%^&*()-_=+[]{}\\|;:\'\",<.>/?",//Done
 };
 
-
+function generatePassword() {
+  var input = prompt("Please enter a number between 8 and 128 to determine the amount of characters in the password!");
 if (input >= 8 && input <= 128 ) {
   var all = confirm("Would you like to use all characters? (uppercase, lowercase, numbers, symbols");
   if (all === true) {
   alert("You selected all criteria! (uppercase, lowercase, numerical, and special)");
-  function generatePassword() {
+  
     var passwordOutput = "";
         var charactersLength = characters.all.length;
         for (var i = 0; i < input; i++) {
@@ -46,7 +47,6 @@ if (input >= 8 && input <= 128 ) {
           charactersLength);
         };
         return passwordOutput;
-  };
   } else {
   var upper = confirm("Would you like uppercase characters included?");
   if (upper === true) {//upper true
@@ -67,8 +67,7 @@ if (input >= 8 && input <= 128 ) {
                 return passwordOutput;
               }
         } else {//special false
-          alert("You selected uppercase, lowercase, and numerical characters!");
-          function generatePassword() { //upperLowerNumber TTTF
+          alert("You selected uppercase, lowercase, and numerical characters!"); //upperLowerNumber TTTF
             var passwordOutput = "";
             var charactersLength = characters.upperLowerNumber.length;
             for (var i = 0; i < input; i++) {
@@ -77,12 +76,11 @@ if (input >= 8 && input <= 128 ) {
             }
             return passwordOutput;
           }
-        }
       } else {//number false
         var special = confirm("Would you like special characters included?");
         if (special === true) {
           alert("You selected uppercase, lowercase, and special characters!");
-          function generatePassword() { //upperLowerSpecial TTFT
+           //upperLowerSpecial TTFT
             var passwordOutput = "";
             var charactersLength = characters.upperLowerSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -90,10 +88,9 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
           alert("You selected uppercase and lowercase characters!");
-          function generatePassword() { //upperLower TTFF
+          //upperLower TTFF
             var passwordOutput = "";
             var charactersLength = characters.upperLower.length;
             for (var i = 0; i < input; i++) {
@@ -101,7 +98,6 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       }
     } else {//lower false
@@ -110,7 +106,7 @@ if (input >= 8 && input <= 128 ) {
         var special = confirm("Would you like special characters included?");
         if (special === true) {
           alert("You selected uppercase, numerical, and special characters!");
-          function generatePassword() { //upperNumberSpecial TFTT
+           //upperNumberSpecial TFTT
             var passwordOutput = "";
             var charactersLength = characters.upperNumberSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -118,10 +114,9 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
           alert("You selected uppercase and numerical characters!");
-          function generatePassword() { //upperNumber TFTF
+          //upperNumber TFTF
             var passwordOutput = "";
             var charactersLength = characters.upperNumber.length;
             for (var i = 0; i < input; i++) {
@@ -129,13 +124,12 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       } else {//number false
         var special = confirm("Would you like special characters included?");
         if (special === true) {
           alert("You selected uppercase and special characters!");
-          function generatePassword() { //upperSpecial TFFT
+          //upperSpecial TFFT
             var passwordOutput = "";
             var charactersLength = characters.upperSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -143,10 +137,9 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
           alert("You selected uppercase characters!");
-          function generatePassword() { //upper TFFF
+           //upper TFFF
             var passwordOutput = "";
             var charactersLength = characters.upper.length;
             for (var i = 0; i < input; i++) {
@@ -154,7 +147,6 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       }
     }
@@ -166,7 +158,7 @@ if (input >= 8 && input <= 128 ) {
         var special = confirm("Would you like special characters included?");
         if (special === true) {
           alert("You selected lowercase, numerical, and special characters!");
-          function generatePassword() { //lowerNumberSpecial FTTT
+           //lowerNumberSpecial FTTT
             var passwordOutput = "";
             var charactersLength = characters.lowerNumberSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -174,10 +166,8 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
-          alert("You selected lowercase and numerical characters!");
-          function generatePassword() { //lowerNumber FTTF
+          alert("You selected lowercase and numerical characters!"); //lowerNumber FTTF
             var passwordOutput = "";
             var charactersLength = characters.lowerNumber.length;
             for (var i = 0; i < input; i++) {
@@ -185,13 +175,11 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       } else {//number false
         var special = confirm("Would you like special characters included?");
         if (special === true) {
-          alert("You selected lowercase and special characters!");
-          function generatePassword() { //lowerSpecial FTFT
+          alert("You selected lowercase and special characters!");//lowerSpecial FTFT
             var passwordOutput = "";
             var charactersLength = characters.lowerSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -199,10 +187,8 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
-          alert("You selected lowercase characters!")
-          function generatePassword() { //lower FTFF
+          alert("You selected lowercase characters!") //lower FTFF
             var passwordOutput = "";
             var charactersLength = characters.lower.length;
             for (var i = 0; i < input; i++) {
@@ -210,7 +196,6 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       }
     } else { //lower false
@@ -218,8 +203,7 @@ if (input >= 8 && input <= 128 ) {
       if (number === true) {//number true
         var special = confirm("Would you like special characters included?");
         if (special === true) {
-          alert("You selected numerical and special characters!")
-          function generatePassword() { //numberSpecial FFTT
+          alert("You selected numerical and special characters!") //numberSpecial FFTT
             var passwordOutput = "";
             var charactersLength = characters.numberSpecial.length;
             for (var i = 0; i < input; i++) {
@@ -227,10 +211,8 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
-          alert("You selected numerical characters!");
-          function generatePassword() { //number FFTF
+          alert("You selected numerical characters!"); //number FFTF
             var passwordOutput = "";
             var charactersLength = characters.number.length;
             for (var i = 0; i < input; i++) {
@@ -238,13 +220,11 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         }
       } else {//number false
         var special = confirm("Would you like special characters included?");
         if (special === true) {
-          alert("You selected special characters!");
-          function generatePassword() { //special FFFT
+          alert("You selected special characters!");//special FFFT
             var passwordOutput = "";
             var charactersLength = characters.special.length;
             for (var i = 0; i < input; i++) {
@@ -252,7 +232,6 @@ if (input >= 8 && input <= 128 ) {
               charactersLength);
             }
             return passwordOutput;
-          }
         } else {
           alert("You must select criteria!");
           location.reload();
@@ -267,4 +246,4 @@ if (input >= 8 && input <= 128 ) {
 }
 
 
-
+}
