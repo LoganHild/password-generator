@@ -11,3 +11,12 @@ https://loganhild.github.io/password-generator/
 ![2021-07-10 (1)](https://user-images.githubusercontent.com/82903685/125178255-a55ca680-e1a8-11eb-914a-e9e2f0f0ce6c.png)
 ![Screenshot (26)](https://user-images.githubusercontent.com/82903685/124862474-0f900400-df7b-11eb-95af-530800769a4f.png)
 ![Screenshot (27)](https://user-images.githubusercontent.com/82903685/124862523-25052e00-df7b-11eb-8208-26eca7116d5a.png)
+
+
+## Contact
+
+  Email: <hildebrandtlogan@gmail.com>
+
+  Github: <https://github.com/LoganHild>
+  
+  LinkedIn: <https://www.linkedin.com/in/loganahildebrandt/>
